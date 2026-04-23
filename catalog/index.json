@@ -1,230 +1,822 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-22T16:30:00.000Z",
+  "generatedAt": "2026-04-22T20:38:34.202Z",
   "packages": [
     {
+      "id": "@plugins/accounting-core",
+      "canonicalId": "@plugins/accounting-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-accounting-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Accounting Core",
+      "description": "General ledger, receivable, payable, billing, payment allocation, and close-oriented accounting truth with append-only posting discipline.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "accounting_finance",
+        "subcategoryLabel": "Accounting & Finance"
+      }
+    },
+    {
       "id": "@plugins/admin-shell-workbench",
+      "canonicalId": "@plugins/admin-shell-workbench",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-admin-shell-workbench",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Admin Shell Workbench",
+      "description": "Default universal admin desk plugin.",
+      "domainGroup": "Platform Backbone",
+      "defaultCategory": {
+        "id": "platform_governance",
+        "label": "Platform Governance",
+        "subcategoryId": "admin_shell",
+        "subcategoryLabel": "Admin Shell"
+      }
     },
     {
       "id": "@plugins/ai-core",
+      "canonicalId": "@plugins/ai-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-ai-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "AI Core",
+      "description": "Durable agent runtime, prompt governance, approval queues, and replay controls.",
+      "domainGroup": "AI Systems",
+      "defaultCategory": {
+        "id": "ai_automation",
+        "label": "AI & Automation",
+        "subcategoryId": "agent_runtime",
+        "subcategoryLabel": "Agent Runtime"
+      }
     },
     {
       "id": "@plugins/ai-evals",
+      "canonicalId": "@plugins/ai-evals",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-ai-evals",
       "version": "0.1.0",
-      "channel": "stable"
-    },
-    {
-      "id": "@plugins/ai-skills-core",
-      "kind": "plugin",
-      "repo": "gutula/gutu-plugin-ai-skills-core",
-      "version": "0.1.0",
-      "channel": "next"
+      "channel": "next",
+      "displayName": "AI Evals",
+      "description": "Eval datasets, judges, regression baselines, and release-grade AI review.",
+      "domainGroup": "AI Systems",
+      "defaultCategory": {
+        "id": "ai_automation",
+        "label": "AI & Automation",
+        "subcategoryId": "evaluation_governance",
+        "subcategoryLabel": "Evaluation & Governance"
+      }
     },
     {
       "id": "@plugins/ai-rag",
+      "canonicalId": "@plugins/ai-rag",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-ai-rag",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "AI RAG",
+      "description": "Tenant-safe memory collections, retrieval diagnostics, and grounded knowledge pipelines.",
+      "domainGroup": "AI Systems",
+      "defaultCategory": {
+        "id": "ai_automation",
+        "label": "AI & Automation",
+        "subcategoryId": "retrieval_knowledge",
+        "subcategoryLabel": "Retrieval & Knowledge"
+      }
     },
     {
-      "id": "@plugins/automation-core",
+      "id": "@plugins/ai-skills-core",
+      "canonicalId": "@plugins/ai-skills-core",
       "kind": "plugin",
-      "repo": "gutula/gutu-plugin-automation-core",
+      "repo": "gutula/gutu-plugin-ai-skills-core",
       "version": "0.1.0",
-      "channel": "next"
+      "channel": "next",
+      "displayName": "AI Skills Core",
+      "description": "Typed governed skills, skill assignments, and agent profile publishing for the governed AI platform.",
+      "domainGroup": "AI Systems",
+      "defaultCategory": {
+        "id": "ai_automation",
+        "label": "AI & Automation",
+        "subcategoryId": "skills_profiles",
+        "subcategoryLabel": "Skills & Profiles"
+      }
+    },
+    {
+      "id": "@plugins/assets-core",
+      "canonicalId": "@plugins/assets-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-assets-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Assets Core",
+      "description": "Fixed asset register, capitalization posture, custody, transfer, depreciation scheduling, and asset exception tracking with explicit accounting handoff.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "assets_lifecycle",
+        "subcategoryLabel": "Assets & Lifecycle"
+      }
     },
     {
       "id": "@plugins/audit-core",
+      "canonicalId": "@plugins/audit-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-audit-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Audit Core",
+      "description": "Canonical audit trail and sensitive action history.",
+      "domainGroup": "Platform Backbone",
+      "defaultCategory": {
+        "id": "platform_governance",
+        "label": "Platform Governance",
+        "subcategoryId": "audit_compliance",
+        "subcategoryLabel": "Audit & Compliance"
+      }
     },
     {
       "id": "@plugins/auth-core",
+      "canonicalId": "@plugins/auth-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-auth-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Auth Core",
+      "description": "Canonical identity and session backbone.",
+      "domainGroup": "Platform Backbone",
+      "defaultCategory": {
+        "id": "user_management",
+        "label": "User Management",
+        "subcategoryId": "authentication",
+        "subcategoryLabel": "Authentication"
+      }
+    },
+    {
+      "id": "@plugins/automation-core",
+      "canonicalId": "@plugins/automation-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-automation-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Automation Core",
+      "description": "Scheduled, API, and webhook-triggered routines with governed concurrency, catch-up policy, and operator follow-up loops.",
+      "domainGroup": "Platform Backbone",
+      "defaultCategory": {
+        "id": "platform_governance",
+        "label": "Platform Governance",
+        "subcategoryId": "automation",
+        "subcategoryLabel": "Automation"
+      }
     },
     {
       "id": "@plugins/booking-core",
+      "canonicalId": "@plugins/booking-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-booking-core",
       "version": "0.1.0",
-      "channel": "stable"
-    },
-    {
-      "id": "@plugins/company-builder-core",
-      "kind": "ai-pack",
-      "repo": "gutula/gutu-plugin-company-builder-core",
-      "version": "0.1.0",
-      "channel": "next"
+      "channel": "next",
+      "displayName": "Booking Core",
+      "description": "Reservations, booking holds, and conflict-safe resource allocation flows.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "booking_reservations",
+        "subcategoryLabel": "Booking & Reservations"
+      }
     },
     {
       "id": "@plugins/community-core",
+      "canonicalId": "@plugins/community-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-community-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Community Core",
+      "description": "Community, groups, and membership backbone.",
+      "domainGroup": "Content and Experience",
+      "defaultCategory": {
+        "id": "user_management",
+        "label": "User Management",
+        "subcategoryId": "community_membership",
+        "subcategoryLabel": "Community & Membership"
+      }
+    },
+    {
+      "id": "@plugins/company-builder-core",
+      "canonicalId": "@plugins/company-builder-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-company-builder-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Company Builder Core",
+      "description": "Pack 0 operating-model layer that composes governed AI execution into departments, queues, and company builders.",
+      "domainGroup": "Governed AI Operating Models",
+      "defaultCategory": {
+        "id": "ai_automation",
+        "label": "AI & Automation",
+        "subcategoryId": "operating_models",
+        "subcategoryLabel": "Operating Models"
+      }
     },
     {
       "id": "@plugins/content-core",
+      "canonicalId": "@plugins/content-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-content-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Content Core",
+      "description": "Pages, posts, and content type backbone.",
+      "domainGroup": "Content and Experience",
+      "defaultCategory": {
+        "id": "content_experience",
+        "label": "Content & Experience",
+        "subcategoryId": "content_management",
+        "subcategoryLabel": "Content Management"
+      }
+    },
+    {
+      "id": "@plugins/crm-core",
+      "canonicalId": "@plugins/crm-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-crm-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "CRM Core",
+      "description": "Lead, opportunity, campaign, and pre-sales engagement records with governed handoff readiness before sales takes commercial truth ownership.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "crm_pipeline",
+        "subcategoryLabel": "CRM & Pipeline"
+      }
     },
     {
       "id": "@plugins/dashboard-core",
+      "canonicalId": "@plugins/dashboard-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-dashboard-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Dashboard Core",
+      "description": "Dashboard, widget, and saved view backbone.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "analytics_reporting",
+        "subcategoryLabel": "Analytics & Reporting"
+      }
     },
     {
       "id": "@plugins/document-core",
+      "canonicalId": "@plugins/document-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-document-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Document Core",
+      "description": "Document lifecycle and generated document backbone.",
+      "domainGroup": "Content and Experience",
+      "defaultCategory": {
+        "id": "content_experience",
+        "label": "Content & Experience",
+        "subcategoryId": "documents",
+        "subcategoryLabel": "Documents"
+      }
     },
     {
       "id": "@plugins/execution-workspaces-core",
+      "canonicalId": "@plugins/execution-workspaces-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-execution-workspaces-core",
       "version": "0.1.0",
-      "channel": "next"
+      "channel": "next",
+      "displayName": "Execution Workspaces Core",
+      "description": "Governed run and issue workspaces with preview, browser, code, and runtime service lifecycle controls.",
+      "domainGroup": "AI Systems",
+      "defaultCategory": {
+        "id": "ai_automation",
+        "label": "AI & Automation",
+        "subcategoryId": "execution_workspaces",
+        "subcategoryLabel": "Execution Workspaces"
+      }
     },
     {
       "id": "@plugins/files-core",
+      "canonicalId": "@plugins/files-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-files-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Files Core",
+      "description": "File references and storage abstractions.",
+      "domainGroup": "Content and Experience",
+      "defaultCategory": {
+        "id": "content_experience",
+        "label": "Content & Experience",
+        "subcategoryId": "files_assets",
+        "subcategoryLabel": "Files & Assets"
+      }
     },
     {
       "id": "@plugins/forms-core",
+      "canonicalId": "@plugins/forms-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-forms-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Forms Core",
+      "description": "Dynamic forms and submissions backbone.",
+      "domainGroup": "Content and Experience",
+      "defaultCategory": {
+        "id": "content_experience",
+        "label": "Content & Experience",
+        "subcategoryId": "forms_submissions",
+        "subcategoryLabel": "Forms & Submissions"
+      }
     },
     {
-      "id": "@plugins/jobs-core",
+      "id": "@plugins/hr-payroll-core",
+      "canonicalId": "@plugins/hr-payroll-core",
       "kind": "plugin",
-      "repo": "gutula/gutu-plugin-jobs-core",
+      "repo": "gutula/gutu-plugin-hr-payroll-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "HR & Payroll Core",
+      "description": "Employee lifecycle, attendance posture, leave and claims, payroll processing, and payout exception truth with governed accounting handoff.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "hr_payroll",
+        "subcategoryLabel": "HR & Payroll"
+      }
     },
     {
       "id": "@plugins/integration-core",
+      "canonicalId": "@plugins/integration-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-integration-core",
       "version": "0.1.0",
-      "channel": "next"
+      "channel": "next",
+      "displayName": "Integration Core",
+      "description": "Governed connector definitions, connection authorization, webhook ingress, and MCP-aware integration health.",
+      "domainGroup": "AI Systems",
+      "defaultCategory": {
+        "id": "integrations",
+        "label": "Integrations",
+        "subcategoryId": "connectors_webhooks",
+        "subcategoryLabel": "Connectors & Webhooks"
+      }
+    },
+    {
+      "id": "@plugins/inventory-core",
+      "canonicalId": "@plugins/inventory-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-inventory-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Inventory Core",
+      "description": "Warehouse truth, stock ledger state, reservation visibility, transfer execution, and physical reconciliation for inventory-controlled operations.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "inventory_warehouse",
+        "subcategoryLabel": "Inventory & Warehouse"
+      }
     },
     {
       "id": "@plugins/issues-core",
+      "canonicalId": "@plugins/issues-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-issues-core",
       "version": "0.1.0",
-      "channel": "next"
+      "channel": "next",
+      "displayName": "Issues Core",
+      "description": "Projects, issues, comments, inbox, attachments, and resumable issue sessions for the governed work OS.",
+      "domainGroup": "AI Systems",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "work_management",
+        "subcategoryLabel": "Work Management"
+      }
+    },
+    {
+      "id": "@plugins/jobs-core",
+      "canonicalId": "@plugins/jobs-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-jobs-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Jobs Core",
+      "description": "Background jobs, schedules, and execution metadata.",
+      "domainGroup": "Platform Backbone",
+      "defaultCategory": {
+        "id": "platform_governance",
+        "label": "Platform Governance",
+        "subcategoryId": "job_orchestration",
+        "subcategoryLabel": "Job Orchestration"
+      }
     },
     {
       "id": "@plugins/knowledge-core",
+      "canonicalId": "@plugins/knowledge-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-knowledge-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Knowledge Core",
+      "description": "Knowledge base, docs, and article tree backbone.",
+      "domainGroup": "Content and Experience",
+      "defaultCategory": {
+        "id": "content_experience",
+        "label": "Content & Experience",
+        "subcategoryId": "knowledge_base",
+        "subcategoryLabel": "Knowledge Base"
+      }
+    },
+    {
+      "id": "@plugins/manufacturing-core",
+      "canonicalId": "@plugins/manufacturing-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-manufacturing-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Manufacturing Core",
+      "description": "BOM, routing, work order, production execution, WIP posture, and subcontract-friendly production truth with explicit inventory and accounting handoff.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "manufacturing_production",
+        "subcategoryLabel": "Manufacturing & Production"
+      }
     },
     {
       "id": "@plugins/notifications-core",
+      "canonicalId": "@plugins/notifications-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-notifications-core",
       "version": "0.1.0",
-      "channel": "stable",
-      "artifact": {
-        "uri": "https://github.com/gutula/gutu-plugin-notifications-core/releases/download/v0.1.0/plugins-notifications-core-0.1.0.tgz",
-        "format": "tgz",
-        "sha256": "ebcf5b88eebd43cfa41d1f20a734c86b2bfb3fcab6c0f3b1003f18a88c9e9f2c",
-        "signature": "HfTybIUjJmiQaHTjqhISA3RRa5CdqO1MSUcoatO7z49kTniaV92wZXC61ULW/up+H4ILJzqz2a1oZ0A1IeXsAg==",
-        "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAexuSkN+unzBKhRPyW54aCkHfx457CDrGZ8bOFNSylkU=\n-----END PUBLIC KEY-----\n"
+      "channel": "next",
+      "displayName": "Notifications Core",
+      "description": "Canonical outbound communication control plane with delivery endpoints, preferences, attempts, and local provider routes.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "communications",
+        "subcategoryLabel": "Communications"
       }
     },
     {
       "id": "@plugins/org-tenant-core",
+      "canonicalId": "@plugins/org-tenant-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-org-tenant-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Org Tenant Core",
+      "description": "Tenant and organization graph management.",
+      "domainGroup": "Platform Backbone",
+      "defaultCategory": {
+        "id": "user_management",
+        "label": "User Management",
+        "subcategoryId": "organizations_tenants",
+        "subcategoryLabel": "Organizations & Tenants"
+      }
     },
     {
       "id": "@plugins/page-builder-core",
+      "canonicalId": "@plugins/page-builder-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-page-builder-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Page Builder Core",
+      "description": "Layout, block, and builder canvas backbone.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "content_experience",
+        "label": "Content & Experience",
+        "subcategoryId": "page_building",
+        "subcategoryLabel": "Page Building"
+      }
+    },
+    {
+      "id": "@plugins/party-relationships-core",
+      "canonicalId": "@plugins/party-relationships-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-party-relationships-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Party & Relationships Core",
+      "description": "Canonical party, contact, address, relationship, and role-facet records for customer, supplier, prospect, and multi-role business identity flows.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "party_relationships",
+        "subcategoryLabel": "Party & Relationships"
+      }
+    },
+    {
+      "id": "@plugins/payments-core",
+      "canonicalId": "@plugins/payments-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-payments-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Payments Core",
+      "description": "Governed provider accounts, payment records, refund state, webhook ingress, and readiness views for the Gutu payments surface.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "payments",
+        "subcategoryLabel": "Payments"
+      }
     },
     {
       "id": "@plugins/portal-core",
+      "canonicalId": "@plugins/portal-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-portal-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Portal Core",
+      "description": "Portal shell and self-service entrypoint backbone.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "content_experience",
+        "label": "Content & Experience",
+        "subcategoryId": "portal_experience",
+        "subcategoryLabel": "Portal Experience"
+      }
+    },
+    {
+      "id": "@plugins/pos-core",
+      "canonicalId": "@plugins/pos-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-pos-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "POS Core",
+      "description": "Retail session, till state, receipt journals, cashier shifts, and offline-tolerant POS execution surfaces that settle into inventory and accounting through explicit handoff.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "pos_retail",
+        "subcategoryLabel": "POS & Retail"
+      }
+    },
+    {
+      "id": "@plugins/pricing-tax-core",
+      "canonicalId": "@plugins/pricing-tax-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-pricing-tax-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Pricing & Tax Core",
+      "description": "Shared price lists, discount rules, tax determination, withholding rules, and commercial policy precedence for every order and billing flow.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "pricing_tax",
+        "subcategoryLabel": "Pricing & Tax"
+      }
+    },
+    {
+      "id": "@plugins/procurement-core",
+      "canonicalId": "@plugins/procurement-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-procurement-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Procurement Core",
+      "description": "Source-to-procure commitments including requisitions, sourcing outcomes, purchase orders, receipt expectations, and supplier exception management.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "procurement_sourcing",
+        "subcategoryLabel": "Procurement & Sourcing"
+      }
+    },
+    {
+      "id": "@plugins/product-catalog-core",
+      "canonicalId": "@plugins/product-catalog-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-product-catalog-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Product & Catalog Core",
+      "description": "Canonical product, variant, UOM, and policy metadata for goods, services, assets, subscriptions, and kit-style catalog composition.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "product_catalog",
+        "subcategoryLabel": "Product & Catalog"
+      }
+    },
+    {
+      "id": "@plugins/projects-core",
+      "canonicalId": "@plugins/projects-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-projects-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Projects Core",
+      "description": "Project plans, milestones, budget posture, execution visibility, and project-driven billing readiness for delivery-centric work.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "projects_delivery",
+        "subcategoryLabel": "Projects & Delivery"
+      }
+    },
+    {
+      "id": "@plugins/quality-core",
+      "canonicalId": "@plugins/quality-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-quality-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Quality Core",
+      "description": "Inspection, hold and release state, deviation handling, CAPA tracking, and quality-oriented exception truth across inbound, in-process, and outbound flows.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "quality_compliance",
+        "subcategoryLabel": "Quality & Compliance"
+      }
     },
     {
       "id": "@plugins/role-policy-core",
+      "canonicalId": "@plugins/role-policy-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-role-policy-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Role Policy Core",
+      "description": "RBAC and ABAC policy management backbone.",
+      "domainGroup": "Platform Backbone",
+      "defaultCategory": {
+        "id": "user_management",
+        "label": "User Management",
+        "subcategoryId": "roles_permissions",
+        "subcategoryLabel": "Roles & Permissions"
+      }
     },
     {
       "id": "@plugins/runtime-bridge-core",
+      "canonicalId": "@plugins/runtime-bridge-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-runtime-bridge-core",
       "version": "0.1.0",
-      "channel": "next"
+      "channel": "next",
+      "displayName": "Runtime Bridge Core",
+      "description": "Governed daemon, watched workspace, local skill, and resumable session contracts for local runtime bridging.",
+      "domainGroup": "AI Systems",
+      "defaultCategory": {
+        "id": "ai_automation",
+        "label": "AI & Automation",
+        "subcategoryId": "runtime_bridges",
+        "subcategoryLabel": "Runtime Bridges"
+      }
+    },
+    {
+      "id": "@plugins/sales-core",
+      "canonicalId": "@plugins/sales-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-sales-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Sales Core",
+      "description": "Quote-to-order demand truth, commercial approvals, fulfillment requests, billing intents, and return initiation for customer-facing sales flows.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "sales_commerce",
+        "subcategoryLabel": "Sales & Commerce"
+      }
     },
     {
       "id": "@plugins/search-core",
+      "canonicalId": "@plugins/search-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-search-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Search Core",
+      "description": "Typed search indexing and query abstractions.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "content_experience",
+        "label": "Content & Experience",
+        "subcategoryId": "search_discovery",
+        "subcategoryLabel": "Search & Discovery"
+      }
+    },
+    {
+      "id": "@plugins/support-service-core",
+      "canonicalId": "@plugins/support-service-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-support-service-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Support & Service Core",
+      "description": "Tickets, service execution posture, SLA state, entitlement-friendly routing, and service billing requests for customer support operations.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "support_service",
+        "subcategoryLabel": "Support & Service"
+      }
     },
     {
       "id": "@plugins/template-core",
+      "canonicalId": "@plugins/template-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-template-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Template Core",
+      "description": "Reusable templates for content, messages, and workflows.",
+      "domainGroup": "Content and Experience",
+      "defaultCategory": {
+        "id": "content_experience",
+        "label": "Content & Experience",
+        "subcategoryId": "templates",
+        "subcategoryLabel": "Templates"
+      }
+    },
+    {
+      "id": "@plugins/traceability-core",
+      "canonicalId": "@plugins/traceability-core",
+      "kind": "plugin",
+      "repo": "gutula/gutu-plugin-traceability-core",
+      "version": "0.1.0",
+      "channel": "next",
+      "displayName": "Traceability & Dimensions Core",
+      "description": "Document lineage, correlation IDs, upstream/downstream references, reconciliation surfaces, and common operating dimensions for cross-plugin traceability.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "business",
+        "label": "Business",
+        "subcategoryId": "traceability_dimensions",
+        "subcategoryLabel": "Traceability & Dimensions"
+      }
     },
     {
       "id": "@plugins/user-directory",
+      "canonicalId": "@plugins/user-directory",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-user-directory",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "User Directory",
+      "description": "Internal person and directory backbone.",
+      "domainGroup": "Operational Data",
+      "defaultCategory": {
+        "id": "user_management",
+        "label": "User Management",
+        "subcategoryId": "directory_profiles",
+        "subcategoryLabel": "Directory & Profiles"
+      }
     },
     {
       "id": "@plugins/workflow-core",
+      "canonicalId": "@plugins/workflow-core",
       "kind": "plugin",
       "repo": "gutula/gutu-plugin-workflow-core",
       "version": "0.1.0",
-      "channel": "stable"
+      "channel": "next",
+      "displayName": "Workflow Core",
+      "description": "Explicit workflows and approval state machines.",
+      "domainGroup": "Platform Backbone",
+      "defaultCategory": {
+        "id": "platform_governance",
+        "label": "Platform Governance",
+        "subcategoryId": "workflow_approvals",
+        "subcategoryLabel": "Workflow & Approvals"
+      }
     }
   ]
 }

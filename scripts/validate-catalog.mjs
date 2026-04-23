@@ -1,7 +1,8 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = process.cwd();
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const catalogPath = join(root, "catalog", "index.json");
 const channelsRoot = join(root, "channels");
 
@@ -26,9 +27,12 @@ for (const channelFile of channelFiles) {
     if (!catalogIds.has(entry.id)) {
       throw new Error(`Channel ${channelFile} references ${entry.id}, which is missing from catalog/index.json.`);
     }
-    assertSignedArtifact(entry, `channels/${channelFile}`);
-    if (process.env.SKIP_REMOTE_ASSET_CHECK !== "1") {
-      await assertRemoteAsset(entry.artifact.uri);
+    if (entry.channel !== channel.id) {
+      throw new Error(`channels/${channelFile} entry ${entry.id} must declare channel '${channel.id}'.`);
+    }
+    const artifactUri = assertSignedArtifact(entry, `channels/${channelFile}`);
+    if (artifactUri && process.env.SKIP_REMOTE_ASSET_CHECK !== "1") {
+      await assertRemoteAsset(artifactUri);
     }
   }
 }
@@ -41,6 +45,8 @@ function assertCatalogShape(payload, label) {
     throw new Error(`${label} must contain a packages array.`);
   }
   assertSortedAndUnique(payload.packages, label);
+  assertPluginPresentationMetadata(payload.packages, label);
+  assertCatalogArtifactPolicy(payload.packages, label);
 }
 
 function assertChannelShape(payload, label) {
@@ -54,6 +60,8 @@ function assertChannelShape(payload, label) {
     throw new Error(`${label} must contain a packages array.`);
   }
   assertSortedAndUnique(payload.packages, label);
+  assertPluginPresentationMetadata(payload.packages, label);
+  assertCatalogArtifactPolicy(payload.packages, label);
 }
 
 function assertSortedAndUnique(entries, label) {
@@ -67,7 +75,20 @@ function assertSortedAndUnique(entries, label) {
   }
 }
 
+function assertCatalogArtifactPolicy(entries, label) {
+  for (const entry of entries) {
+    if (entry.channel !== "stable") {
+      continue;
+    }
+
+    assertSignedArtifact(entry, label);
+  }
+}
+
 function assertSignedArtifact(entry, label) {
+  if (entry.channel === "next" && (!entry.artifact || typeof entry.artifact.uri !== "string")) {
+    return undefined;
+  }
   if (!entry.artifact || typeof entry.artifact.uri !== "string") {
     throw new Error(`${label} entry ${entry.id} must include an installable artifact.`);
   }
@@ -79,6 +100,34 @@ function assertSignedArtifact(entry, label) {
   }
   if (typeof entry.artifact.publicKeyPem !== "string" || entry.artifact.publicKeyPem.length === 0) {
     throw new Error(`${label} entry ${entry.id} must include a publicKeyPem.`);
+  }
+  return entry.artifact.uri;
+}
+
+function assertPluginPresentationMetadata(entries, label) {
+  for (const entry of entries) {
+    if (entry.kind !== "plugin") {
+      continue;
+    }
+
+    if (typeof entry.displayName !== "string" || entry.displayName.length === 0) {
+      throw new Error(`${label} entry ${entry.id} must include a displayName.`);
+    }
+    if (typeof entry.description !== "string" || entry.description.length === 0) {
+      throw new Error(`${label} entry ${entry.id} must include a description.`);
+    }
+    if (typeof entry.domainGroup !== "string" || entry.domainGroup.length === 0) {
+      throw new Error(`${label} entry ${entry.id} must include a domainGroup.`);
+    }
+    if (!entry.defaultCategory || typeof entry.defaultCategory !== "object") {
+      throw new Error(`${label} entry ${entry.id} must include a defaultCategory object.`);
+    }
+
+    for (const field of ["id", "label", "subcategoryId", "subcategoryLabel"]) {
+      if (typeof entry.defaultCategory[field] !== "string" || entry.defaultCategory[field].length === 0) {
+        throw new Error(`${label} entry ${entry.id} defaultCategory.${field} must be a non-empty string.`);
+      }
+    }
   }
 }
 
